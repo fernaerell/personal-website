@@ -33,7 +33,7 @@
         ]
     }
     </script>
-    <meta name="google-site-verification" content="VmPbJk8R23UOL7T2OnIhsv2Jfy45u61orObgArAIj7g" />
+    <meta name="google-site-verification" content="78yIckYlGCBkFct9KzhT_3qFoimkJfKHcjSIEekwRT0" />
 </svelte:head>
 
 {@render children()}
