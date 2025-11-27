@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/images/fernaerell.webp';
+	import favicon from '$lib/assets/images/social_media_icons/fernaerell.webp';
 
 	let { children } = $props();
 </script>

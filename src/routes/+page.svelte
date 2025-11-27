@@ -1,14 +1,14 @@
 <script lang="ts">
-	import fernaerell from '$lib/assets/images/fernaerell.webp';
-	import facebook_icon from '$lib/assets/images/facebook_icon.webp';
-	import github_icon from '$lib/assets/images/github_icon.webp';
-	import gmail_icon from '$lib/assets/images/gmail_icon.webp';
-	import instagram_icon from '$lib/assets/images/instagram_icon.webp';
-	import linkedin_icon from '$lib/assets/images/linkedin_icon.webp';
-	import threads_icon from '$lib/assets/images/threads_icon.webp';
-	import tiktok_icon from '$lib/assets/images/tiktok_icon.webp';
-	import x_icon from '$lib/assets/images/x_icon.webp';
-	import youtube_icon from '$lib/assets/images/youtube_icon.webp';
+	import fernaerell from '$lib/assets/images/social_media_icons/fernaerell.webp';
+	import facebook_icon from '$lib/assets/images/social_media_icons/facebook_icon.webp';
+	import github_icon from '$lib/assets/images/social_media_icons/github_icon.webp';
+	import gmail_icon from '$lib/assets/images/social_media_icons/gmail_icon.webp';
+	import instagram_icon from '$lib/assets/images/social_media_icons/instagram_icon.webp';
+	import linkedin_icon from '$lib/assets/images/social_media_icons/linkedin_icon.webp';
+	import threads_icon from '$lib/assets/images/social_media_icons/threads_icon.webp';
+	import tiktok_icon from '$lib/assets/images/social_media_icons/tiktok_icon.webp';
+	import x_icon from '$lib/assets/images/social_media_icons/x_icon.webp';
+	import youtube_icon from '$lib/assets/images/social_media_icons/youtube_icon.webp';
 
 	import Typed, { type TypedOptions } from 'typed.js';
 	import { onMount } from 'svelte';
