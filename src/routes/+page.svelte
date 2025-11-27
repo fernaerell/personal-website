@@ -10,6 +10,8 @@
 	import x_icon from '$lib/assets/images/social_media_icons/x_icon.webp';
 	import youtube_icon from '$lib/assets/images/social_media_icons/youtube_icon.webp';
 
+	import YoutubeChannelList from '$lib/components/YoutubeChannelList.svelte';
+
 	import Typed, { type TypedOptions } from 'typed.js';
 	import { onMount } from 'svelte';
 
@@ -56,7 +58,7 @@
 			alt: 'instagram'
 		},
 		{
-			url: 'https://www.youtube.com/@fernaerell',
+			url: 'youtube_channel_list',
 			img: youtube_icon,
 			alt: 'youtube'
 		},
@@ -69,6 +71,12 @@
 
 	let typedElement: HTMLElement;
 	let typedStringsElement: HTMLElement;
+
+	let show_youtube_channel_list = false;
+
+	function showYoutubeChannelList() {
+		show_youtube_channel_list = true;
+	}
 
 	onMount(() => {
 		const typed_options: TypedOptions = {
@@ -91,6 +99,7 @@
 	});
 </script>
 
+<YoutubeChannelList bind:show_youtube_channel_list />
 <header class="flex justify-center items-center h-screen px-[30px] sm:p-0">
 	<div class="flex flex-col justify-center items-center gap-[27px]">
 		<img src={fernaerell} alt="fernaerell" width="100" />
@@ -112,13 +121,18 @@
 		</p>
 		<div class="flex flex-row flex-wrap p-2.5 gap-[30px] justify-center items-center">
 			{#each social_media_data as social_media (social_media.alt)}
-				<a
-					href={social_media.url}
-					target="_blank"
-					class="hover:scale-110 transition-transform"
-				>
-					<img src={social_media.img} alt={social_media.alt} width="32" />
-				</a>
+				{#if social_media.url === 'youtube_channel_list'}
+					<button
+						on:click={showYoutubeChannelList}
+						class="hover:scale-110 transition-transform hover:cursor-pointer"
+					>
+						<img src={social_media.img} alt={social_media.alt} width="32" />
+					</button>
+				{:else}
+					<a href={social_media.url} target="_blank" class="hover:scale-110 transition-transform">
+						<img src={social_media.img} alt={social_media.alt} width="32" />
+					</a>
+				{/if}
 			{/each}
 		</div>
 	</div>
