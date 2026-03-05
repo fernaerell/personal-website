@@ -56,7 +56,7 @@
 			alt: 'instagram'
 		},
 		{
-			url: 'https://www.youtube.com/@aerellgamers',
+			url: 'https://www.youtube.com/@fernaerell',
 			img: youtube_icon,
 			alt: 'youtube'
 		},
