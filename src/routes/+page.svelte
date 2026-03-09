@@ -1,5 +1,5 @@
 <script lang="ts">
-	import fernaerell from '$lib/assets/images/social_media_icons/fernaerell.webp';
+	import photo_profile from '$lib/assets/images/photo_profile.webp';
 	import facebook_icon from '$lib/assets/images/social_media_icons/facebook_icon.webp';
 	import github_icon from '$lib/assets/images/social_media_icons/github_icon.webp';
 	import gmail_icon from '$lib/assets/images/social_media_icons/gmail_icon.webp';
@@ -93,7 +93,7 @@
 
 <header class="flex justify-center items-center h-screen px-[30px] sm:p-0">
 	<div class="flex flex-col justify-center items-center gap-[27px]">
-		<img src={fernaerell} alt="fernaerell" width="100" />
+		<img src={photo_profile} alt="photo_profile" width="100" class="rounded-[100%]" />
 		<span class="font-bold text-[1rem] sm:text-[1.25rem] text-center">
 			I'm
 			<a href="https://www.google.com/search?q=Fern+Aerell" target="_blank" class="underline"

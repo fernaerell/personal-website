@@ -1,12 +1,12 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/images/social_media_icons/fernaerell.webp';
+	import photo_profile from '$lib/assets/images/photo_profile.webp';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={photo_profile} />
 	<title>Fern Aerell</title>
     <meta name="description" content="Fern Aerell — Software Engineer, Creative Technologist">
     <meta name="keywords" content="Fern Aerell, Fern, Aerell, Software Engineer, Creative Technologist, Portfolio">
