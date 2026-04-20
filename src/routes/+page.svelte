@@ -144,6 +144,7 @@
 	<div class="flex flex-row flex-wrap items-center justify-center gap-7.5 p-2.5">
 		{#each links as link, index (index)}
 			<a
+				title={link.title}
 				href={link.href}
 				rel="nofollow noopener external"
 				target="_blank"
