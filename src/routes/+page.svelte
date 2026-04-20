@@ -1,78 +1,109 @@
 <script lang="ts">
-	import photo_profile from '$lib/assets/images/photo_profile.webp';
-	import facebook_icon from '$lib/assets/images/social_media_icons/facebook_icon.webp';
-	import github_icon from '$lib/assets/images/social_media_icons/github_icon.webp';
-	import gmail_icon from '$lib/assets/images/social_media_icons/gmail_icon.webp';
-	import instagram_icon from '$lib/assets/images/social_media_icons/instagram_icon.webp';
-	import linkedin_icon from '$lib/assets/images/social_media_icons/linkedin_icon.webp';
-	import threads_icon from '$lib/assets/images/social_media_icons/threads_icon.webp';
-	import tiktok_icon from '$lib/assets/images/social_media_icons/tiktok_icon.webp';
-	import x_icon from '$lib/assets/images/social_media_icons/x_icon.webp';
-	import youtube_icon from '$lib/assets/images/social_media_icons/youtube_icon.webp';
+	import photo_profile_webp from '$lib/assets/images/photo_profile.webp';
+	import github_icon_webp from '$lib/assets/images/icons/social_media/github.webp';
+	import linkedin_icon_webp from '$lib/assets/images/icons/social_media/linkedin.webp';
+	import x_icon_webp from '$lib/assets/images/icons/social_media/x.webp';
+	import tiktok_icon_webp from '$lib/assets/images/icons/social_media/tiktok.webp';
+	import facebook_icon_webp from '$lib/assets/images/icons/social_media/facebook.webp';
+	import threads_icon_webp from '$lib/assets/images/icons/social_media/threads.webp';
+	import instagram_icon_webp from '$lib/assets/images/icons/social_media/instagram.webp';
+	import youtube_icon_webp from '$lib/assets/images/icons/social_media/youtube.webp';
+	import gmail_icon_webp from '$lib/assets/images/icons/social_media/gmail.webp';
 
-	import Typed, { type TypedOptions } from 'typed.js';
 	import { onMount } from 'svelte';
 
-	interface SocialMedia {
-		url: string;
-		img: string;
-		alt: string;
+	import Typed, { type TypedOptions } from 'typed.js';
+
+	interface Link {
+		title: string;
+		href: string;
+		img: {
+			src: string;
+			alt: string;
+		};
 	}
 
-	const social_media_data: SocialMedia[] = [
+	const links: Link[] = [
 		{
-			url: 'https://github.com/fernaerell',
-			img: github_icon,
-			alt: 'github'
+			title: 'Github',
+			href: 'https://github.com/fernaerell',
+			img: {
+				src: github_icon_webp,
+				alt: 'github icon'
+			}
 		},
 		{
-			url: 'https://www.linkedin.com/in/fernaerell',
-			img: linkedin_icon,
-			alt: 'linkedin'
+			title: 'LinkedIn',
+			href: 'https://www.linkedin.com/in/fernaerell',
+			img: {
+				src: linkedin_icon_webp,
+				alt: 'linkedin icon'
+			}
 		},
 		{
-			url: 'https://x.com/fernaerell',
-			img: x_icon,
-			alt: 'x'
+			title: 'X',
+			href: 'https://x.com/fernaerell',
+			img: {
+				src: x_icon_webp,
+				alt: 'x icon'
+			}
 		},
 		{
-			url: 'https://tiktok.com/@fernaerell',
-			img: tiktok_icon,
-			alt: 'tiktok'
+			title: 'Tiktok',
+			href: 'https://tiktok.com/@fernaerell',
+			img: {
+				src: tiktok_icon_webp,
+				alt: 'tiktok icon'
+			}
 		},
 		{
-			url: 'https://www.facebook.com/fernaerelll',
-			img: facebook_icon,
-			alt: 'facebook'
+			title: 'Facebook',
+			href: 'https://www.facebook.com/fernaerelll',
+			img: {
+				src: facebook_icon_webp,
+				alt: 'facebook icon'
+			}
 		},
 		{
-			url: 'https://www.threads.com/@fernaerell',
-			img: threads_icon,
-			alt: 'threads'
+			title: 'Threads',
+			href: 'https://www.threads.com/@fernaerell',
+			img: {
+				src: threads_icon_webp,
+				alt: 'threads icon'
+			}
 		},
 		{
-			url: 'https://instagram.com/fernaerell',
-			img: instagram_icon,
-			alt: 'instagram'
+			title: 'Instagram',
+			href: 'https://instagram.com/fernaerell',
+			img: {
+				src: instagram_icon_webp,
+				alt: 'instagram icon'
+			}
 		},
 		{
-			url: 'https://www.youtube.com/@fernaerell',
-			img: youtube_icon,
-			alt: 'youtube'
+			title: 'Youtube',
+			href: 'https://www.youtube.com/@fernaerell',
+			img: {
+				src: youtube_icon_webp,
+				alt: 'youtube icon'
+			}
 		},
 		{
-			url: 'mailto:fernaerell2020@gmail.com',
-			img: gmail_icon,
-			alt: 'gmail'
+			title: 'Gmail',
+			href: 'mailto:fernaerell2020@gmail.com',
+			img: {
+				src: gmail_icon_webp,
+				alt: 'gmail icon'
+			}
 		}
 	];
 
-	let typedElement: HTMLElement;
-	let typedStringsElement: HTMLElement;
+	let typed_strings_element: HTMLElement;
+	let typed_cursor_element: HTMLElement;
 
 	onMount(() => {
 		const typed_options: TypedOptions = {
-			stringsElement: typedStringsElement,
+			stringsElement: typed_strings_element,
 			typeSpeed: 80,
 			backSpeed: 40,
 			backDelay: 1500,
@@ -83,7 +114,7 @@
 			cursorChar: '|'
 		};
 
-		const typed = new Typed(typedElement, typed_options);
+		const typed = new Typed(typed_cursor_element, typed_options);
 
 		return () => {
 			typed.destroy();
@@ -91,31 +122,35 @@
 	});
 </script>
 
-<header class="flex justify-center items-center h-screen px-[30px] sm:p-0">
-	<div class="flex flex-col justify-center items-center gap-[27px]">
-		<img src={photo_profile} alt="photo_profile" width="100" class="rounded-[100%]" />
-		<span class="font-bold text-[1rem] sm:text-[1.25rem] text-center">
-			I'm
-			<a href="https://www.google.com/search?q=Fern+Aerell" target="_blank" class="underline"
-				>Fern Aerell</a
+<header class="flex h-screen flex-col items-center justify-center gap-6.75 px-7.5 sm:p-0">
+	<img
+		src={photo_profile_webp}
+		alt="Fern Aerell, Software Engineer & Digital Creator"
+		width="100"
+		height="100"
+		loading="eager"
+		class="rounded-full"
+	/>
+	<h1 class="text-center text-[1rem] font-bold sm:text-[1.25rem]">I'm Fern Aerell</h1>
+	<h2 class="text-center text-[1.5rem] font-bold sm:text-[2.25rem]">
+		<div bind:this={typed_strings_element}>
+			<span>Digital Creator</span>
+			<span>Software Engineer</span>
+		</div>
+
+		<span bind:this={typed_cursor_element}></span>
+	</h2>
+	<p class="text-center text-[1rem] sm:text-[1.125rem]">I haven't figured out what to write yet.</p>
+	<div class="flex flex-row flex-wrap items-center justify-center gap-7.5 p-2.5">
+		{#each links as link, index (index)}
+			<a
+				href={link.href}
+				rel="nofollow noopener external"
+				target="_blank"
+				class="transition-transform hover:scale-110"
 			>
-		</span>
-		<div class="font-bold text-[1.5rem] sm:text-[2.25rem] text-center">
-			<div bind:this={typedStringsElement}>
-				<p>Software Engineer</p>
-				<p>Creative Technologist</p>
-			</div>
-			<span bind:this={typedElement}></span>
-		</div>
-		<p class="text-[1rem] sm:text-[1.125rem] text-center">
-			I build systems, tools, and interactive experiences through code.
-		</p>
-		<div class="flex flex-row flex-wrap p-2.5 gap-[30px] justify-center items-center">
-			{#each social_media_data as social_media (social_media.alt)}
-				<a href={social_media.url} target="_blank" class="hover:scale-110 transition-transform">
-					<img src={social_media.img} alt={social_media.alt} width="32" />
-				</a>
-			{/each}
-		</div>
+				<img src={link.img.src} alt={link.img.alt} width="32" height="32" />
+			</a>
+		{/each}
 	</div>
 </header>
