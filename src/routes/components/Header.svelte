@@ -1,102 +1,21 @@
 <script lang="ts">
-	import photo_profile_webp from '$lib/assets/images/photo_profile.webp';
-	import github_icon_webp from '$lib/assets/images/icons/social_media/github.webp';
-	import linkedin_icon_webp from '$lib/assets/images/icons/social_media/linkedin.webp';
-	import x_icon_webp from '$lib/assets/images/icons/social_media/x.webp';
-	import tiktok_icon_webp from '$lib/assets/images/icons/social_media/tiktok.webp';
-	import facebook_icon_webp from '$lib/assets/images/icons/social_media/facebook.webp';
-	import threads_icon_webp from '$lib/assets/images/icons/social_media/threads.webp';
-	import instagram_icon_webp from '$lib/assets/images/icons/social_media/instagram.webp';
-	import youtube_icon_webp from '$lib/assets/images/icons/social_media/youtube.webp';
-	import gmail_icon_webp from '$lib/assets/images/icons/social_media/gmail.webp';
-
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 
 	import Typed, { type TypedOptions } from 'typed.js';
 
-	interface Link {
-		title: string;
-		href: string;
-		img: {
-			src: string;
-			alt: string;
-		};
+	import type Link from '../lib/Link';
+
+	interface Props {
+		photo_profile: string;
+		alt_photo_profile: string;
+		name: Snippet;
+		professions: string[];
+		description: Snippet;
+		links: Link[];
 	}
 
-	const links: Link[] = [
-		{
-			title: 'Github',
-			href: 'https://github.com/fernaerell',
-			img: {
-				src: github_icon_webp,
-				alt: 'github icon'
-			}
-		},
-		{
-			title: 'LinkedIn',
-			href: 'https://www.linkedin.com/in/fernaerell',
-			img: {
-				src: linkedin_icon_webp,
-				alt: 'linkedin icon'
-			}
-		},
-		{
-			title: 'X',
-			href: 'https://x.com/fernaerell',
-			img: {
-				src: x_icon_webp,
-				alt: 'x icon'
-			}
-		},
-		{
-			title: 'Tiktok',
-			href: 'https://tiktok.com/@fernaerell',
-			img: {
-				src: tiktok_icon_webp,
-				alt: 'tiktok icon'
-			}
-		},
-		{
-			title: 'Facebook',
-			href: 'https://www.facebook.com/fernaerelll',
-			img: {
-				src: facebook_icon_webp,
-				alt: 'facebook icon'
-			}
-		},
-		{
-			title: 'Threads',
-			href: 'https://www.threads.com/@fernaerell',
-			img: {
-				src: threads_icon_webp,
-				alt: 'threads icon'
-			}
-		},
-		{
-			title: 'Instagram',
-			href: 'https://instagram.com/fernaerell',
-			img: {
-				src: instagram_icon_webp,
-				alt: 'instagram icon'
-			}
-		},
-		{
-			title: 'Youtube',
-			href: 'https://www.youtube.com/@fernaerell',
-			img: {
-				src: youtube_icon_webp,
-				alt: 'youtube icon'
-			}
-		},
-		{
-			title: 'Gmail',
-			href: 'mailto:fernaerell2020@gmail.com',
-			img: {
-				src: gmail_icon_webp,
-				alt: 'gmail icon'
-			}
-		}
-	];
+	const { photo_profile, alt_photo_profile, name, professions, description, links }: Props =
+		$props();
 
 	let typed_strings_element: HTMLElement;
 	let typed_cursor_element: HTMLElement;
@@ -124,23 +43,24 @@
 
 <header class="flex h-screen flex-col items-center justify-center gap-6.75 px-7.5 sm:p-0">
 	<img
-		src={photo_profile_webp}
-		alt="Fern Aerell, Software Engineer & Digital Creator"
+		src={photo_profile}
+		alt={alt_photo_profile}
 		width="100"
 		height="100"
 		loading="eager"
 		class="rounded-full"
 	/>
-	<h1 class="text-center text-[1rem] font-bold sm:text-[1.25rem]">I'm Fern Aerell</h1>
+	<h1 class="text-center text-[1rem] font-bold sm:text-[1.25rem]">I'm {@render name()}</h1>
 	<h2 class="text-center text-[1.5rem] font-bold sm:text-[2.25rem]">
 		<div bind:this={typed_strings_element}>
-			<span>Digital Creator</span>
-			<span>Software Engineer</span>
+			{#each professions as profession, index (index)}
+				<span>{profession}</span>
+			{/each}
 		</div>
 
 		<span bind:this={typed_cursor_element}></span>
 	</h2>
-	<p class="text-center text-[1rem] sm:text-[1.125rem]">I haven't figured out what to write yet.</p>
+	<p class="text-center text-[1rem] sm:text-[1.125rem]">{@render description()}</p>
 	<div class="flex flex-row flex-wrap items-center justify-center gap-7.5 p-2.5">
 		{#each links as link, index (index)}
 			<a
