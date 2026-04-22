@@ -10,9 +10,13 @@
 	import youtube_icon_webp from '$lib/assets/images/icons/social_media/youtube.webp';
 	import gmail_icon_webp from '$lib/assets/images/icons/social_media/gmail.webp';
 
-	import Header from './components/Header.svelte';
+	import placeholder from '$lib/assets/images/placeholder.webp';
+
+	import HeaderComponent from './components/Header.svelte';
+	import PortfolioComponent from './components/Portfolio.svelte';
 
 	import type Link from './lib/Link';
+	import type Portfolio from './lib/Portfolio';
 
 	const professions: string[] = ['Digital Creator', 'Software Engineer'];
 
@@ -90,9 +94,21 @@
 			}
 		}
 	];
+
+	let portfolios: Portfolio[] = [
+		{
+			href: '/',
+			img: {
+				src: placeholder,
+				alt: 'placeholder'
+			},
+			title: 'Placeholder',
+			label: 'Placeholder'
+		}
+	];
 </script>
 
-<Header
+<HeaderComponent
 	photo_profile={photo_profile_webp}
 	alt_photo_profile="Fern Aerell, Software Engineer & Digital Creator"
 	{links}
@@ -104,4 +120,6 @@
 	{#snippet description()}
 		I haven't figured out what to write yet.
 	{/snippet}
-</Header>
+</HeaderComponent>
+
+<PortfolioComponent {portfolios}></PortfolioComponent>
