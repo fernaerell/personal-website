@@ -18,6 +18,7 @@
 
 	import HeaderComponent from './components/Header.svelte';
 	import PortfolioComponent from './components/Portfolio.svelte';
+	import FooterComponent from './components/Footer.svelte';
 
 	import type Link from './lib/Link';
 	import type Portfolio from './lib/Portfolio';
@@ -211,7 +212,7 @@
 			},
 			title: 'Partner',
 			label: PFL_MC_BEDROCK_ADDON
-		},
+		}
 	];
 </script>
 
@@ -230,3 +231,5 @@
 </HeaderComponent>
 
 <PortfolioComponent {portfolios}></PortfolioComponent>
+
+<FooterComponent year={2026} name="Fern Aerell"></FooterComponent>
