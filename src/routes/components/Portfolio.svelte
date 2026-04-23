@@ -7,7 +7,13 @@
 
 	const { portfolios }: Props = $props();
 
-	const labels: string[] = ['All', ...portfolios.map((x) => x.label)];
+	let labels: string[] = ['All'];
+	portfolios
+		.map((x) => x.label)
+		.forEach((y) => {
+			if (labels.includes(y)) return;
+			labels.push(y);
+		});
 	let selected_label = $state<string | undefined>(undefined);
 
 	let portfolios_filtered = $derived(
@@ -37,7 +43,7 @@
 			<div class="flex flex-row flex-wrap justify-center gap-2.5">
 				{#each portfolios_filtered as portfolio, index (index)}
 					<a href={portfolio.href} rel="external" target="_blank" class="flex flex-col gap-1.25">
-						<img src={portfolio.img.src} alt={portfolio.img.alt} class="w-75" />
+						<img src={portfolio.img.src} alt={portfolio.img.alt} class="h-43.75 w-75" />
 						<p>{portfolio.title}</p>
 					</a>
 				{/each}
