@@ -9,15 +9,20 @@
 
 	let labels: string[] = ['All'];
 	portfolios
-		.map((x) => x.label)
-		.forEach((y) => {
-			if (labels.includes(y)) return;
-			labels.push(y);
+		.map((a) => a.label)
+		.map((b) => b)
+		.forEach((c) => {
+			c.forEach((d) => {
+				if (labels.includes(d)) return;
+				labels.push(d);
+			});
 		});
 	let selected_label = $state<string | undefined>(undefined);
 
 	let portfolios_filtered = $derived(
-		selected_label === undefined ? portfolios : portfolios.filter((x) => x.label === selected_label)
+		selected_label === undefined
+			? portfolios
+			: portfolios.filter((x) => selected_label != undefined && x.label.includes(selected_label))
 	);
 
 	function set_portfolios_filter(label: string | undefined) {

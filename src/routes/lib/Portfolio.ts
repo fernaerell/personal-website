@@ -5,5 +5,5 @@ export default interface Portfolio {
 		alt: string;
 	};
 	title: string;
-	label: string;
+	label: string[];
 }
