@@ -117,7 +117,7 @@
 	});
 </script>
 
-<header class="flex h-dvh flex-col items-center justify-center gap-6.75 px-7.5 sm:p-0">
+<header class="flex h-screen flex-col items-center justify-center gap-6.75 px-7.5 sm:p-0">
 	<img
 		src={photoProfileRoundedWebp}
 		alt="Fern Aerell"
@@ -154,7 +154,8 @@
 			</a>
 		{/each}
 	</div>
-	<div class="absolute inset-x-0 bottom-8 flex animate-bounce flex-col items-center">
+	<br>
+	<div class="inset-x-0 bottom-8 flex animate-bounce flex-col items-center">
 		<span class="mb-2 text-center text-sm text-gray-400">Scroll to explore</span><svg
 			class="h-6 w-6 text-gray-400"
 			fill="none"
