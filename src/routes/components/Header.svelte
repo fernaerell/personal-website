@@ -117,7 +117,7 @@
 	});
 </script>
 
-<header class="flex h-screen flex-col items-center justify-center gap-6.75 px-7.5 sm:p-0">
+<header class="flex h-dvh flex-col items-center justify-center gap-6.75 px-7.5 sm:p-0">
 	<img
 		src={photoProfileRoundedWebp}
 		alt="Fern Aerell"
