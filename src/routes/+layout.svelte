@@ -4,7 +4,7 @@
 	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import './layout.css';
-	import favicon from '$lib/assets/images/photo_profile.webp';
+	import favicon from '$lib/assets/images/photo_profile_rounded.webp';
 
 	let { children } = $props();
 </script>

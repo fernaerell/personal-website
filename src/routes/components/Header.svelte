@@ -1,28 +1,104 @@
 <script lang="ts">
-	import { onMount, type Snippet } from 'svelte';
+	import photoProfileRoundedWebp from '$lib/assets/images/photo_profile_rounded.webp';
 
+	import githubIconWebp from '$lib/assets/images/icons/social_media/github.webp';
+	import linkedinIconWebp from '$lib/assets/images/icons/social_media/linkedin.webp';
+	import xIconWebp from '$lib/assets/images/icons/social_media/x.webp';
+	import tiktokIconWebp from '$lib/assets/images/icons/social_media/tiktok.webp';
+	import facebookIconWebp from '$lib/assets/images/icons/social_media/facebook.webp';
+	import threadsIconWebp from '$lib/assets/images/icons/social_media/threads.webp';
+	import instagramIconWebp from '$lib/assets/images/icons/social_media/instagram.webp';
+	import youtubeIconWebp from '$lib/assets/images/icons/social_media/youtube.webp';
+	import gmailIconWebp from '$lib/assets/images/icons/social_media/gmail.webp';
+
+	import { onMount } from 'svelte';
 	import Typed, { type TypedOptions } from 'typed.js';
 
 	import type Link from '../lib/Link';
 
-	interface Props {
-		photo_profile: string;
-		alt_photo_profile: string;
-		name: Snippet;
-		professions: string[];
-		description: Snippet;
-		links: Link[];
-	}
+	const professions: string[] = ['Digital Creator', 'Freelancer', 'Software Engineer'];
 
-	const { photo_profile, alt_photo_profile, name, professions, description, links }: Props =
-		$props();
+	const links: Link[] = [
+		{
+			title: 'Github',
+			href: 'https://github.com/fernaerell',
+			img: {
+				src: githubIconWebp,
+				alt: 'github icon'
+			}
+		},
+		{
+			title: 'LinkedIn',
+			href: 'https://www.linkedin.com/in/fernaerell',
+			img: {
+				src: linkedinIconWebp,
+				alt: 'linkedin icon'
+			}
+		},
+		{
+			title: 'X',
+			href: 'https://x.com/fernaerell',
+			img: {
+				src: xIconWebp,
+				alt: 'x icon'
+			}
+		},
+		{
+			title: 'Tiktok',
+			href: 'https://tiktok.com/@fernaerell',
+			img: {
+				src: tiktokIconWebp,
+				alt: 'tiktok icon'
+			}
+		},
+		{
+			title: 'Facebook',
+			href: 'https://www.facebook.com/fernaerelll',
+			img: {
+				src: facebookIconWebp,
+				alt: 'facebook icon'
+			}
+		},
+		{
+			title: 'Threads',
+			href: 'https://www.threads.com/@fernaerell',
+			img: {
+				src: threadsIconWebp,
+				alt: 'threads icon'
+			}
+		},
+		{
+			title: 'Instagram',
+			href: 'https://instagram.com/fernaerell',
+			img: {
+				src: instagramIconWebp,
+				alt: 'instagram icon'
+			}
+		},
+		{
+			title: 'Youtube',
+			href: 'https://www.youtube.com/@fernaerell',
+			img: {
+				src: youtubeIconWebp,
+				alt: 'youtube icon'
+			}
+		},
+		{
+			title: 'Gmail',
+			href: 'mailto:fernaerell2020@gmail.com',
+			img: {
+				src: gmailIconWebp,
+				alt: 'gmail icon'
+			}
+		}
+	];
 
-	let typed_strings_element: HTMLElement;
-	let typed_cursor_element: HTMLElement;
+	let typedStringsElement: HTMLElement;
+	let typedCursorElement: HTMLElement;
 
 	onMount(() => {
-		const typed_options: TypedOptions = {
-			stringsElement: typed_strings_element,
+		const typedOptions: TypedOptions = {
+			stringsElement: typedStringsElement,
 			typeSpeed: 80,
 			backSpeed: 40,
 			backDelay: 1500,
@@ -33,7 +109,7 @@
 			cursorChar: '|'
 		};
 
-		const typed = new Typed(typed_cursor_element, typed_options);
+		const typed = new Typed(typedCursorElement, typedOptions);
 
 		return () => {
 			typed.destroy();
@@ -43,24 +119,28 @@
 
 <header class="flex h-screen flex-col items-center justify-center gap-6.75 px-7.5 sm:p-0">
 	<img
-		src={photo_profile}
-		alt={alt_photo_profile}
-		width="100"
-		height="100"
+		src={photoProfileRoundedWebp}
+		alt="Fern Aerell"
+		width="150"
+		height="150"
 		loading="eager"
 		class="rounded-full"
 	/>
-	<h1 class="text-center text-[1rem] font-bold sm:text-[1.25rem]">I'm {@render name()}</h1>
-	<h2 class="text-center text-[1.5rem] font-bold sm:text-[2.25rem]">
-		<div bind:this={typed_strings_element}>
-			{#each professions as profession, index (index)}
-				<span>{profession}</span>
-			{/each}
-		</div>
-
-		<span bind:this={typed_cursor_element}></span>
-	</h2>
-	<p class="text-center text-[1rem] sm:text-[1.125rem]">{@render description()}</p>
+	<div class="flex flex-col items-center justify-center gap-2.5">
+		<h1 class="text-center text-[2rem] font-bold">Fern Aerell</h1>
+		<h2 class="text-center text-[1.5rem] opacity-90">
+			<div bind:this={typedStringsElement}>
+				{#each professions as profession, index (index)}
+					<span>{profession}</span>
+				{/each}
+			</div>
+			<span bind:this={typedCursorElement}></span>
+		</h2>
+		<div class="my-1.25 h-px w-17.5 bg-white opacity-30"></div>
+		<p class="max-w-100 text-center text-[1rem] opacity-80">
+			I build tools and mods people actually use, from Minecraft to real‑world apps
+		</p>
+	</div>
 	<div class="flex flex-row flex-wrap items-center justify-center gap-7.5 p-2.5">
 		{#each links as link, index (index)}
 			<a
@@ -73,5 +153,19 @@
 				<img src={link.img.src} alt={link.img.alt} width="32" height="32" />
 			</a>
 		{/each}
+	</div>
+	<div class="absolute inset-x-0 bottom-8 flex animate-bounce flex-col items-center">
+		<span class="mb-2 text-center text-sm text-gray-400">Scroll to explore</span><svg
+			class="h-6 w-6 text-gray-400"
+			fill="none"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+			><path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M19 14l-7 7m0 0l-7-7m7 7V3"
+			></path></svg
+		>
 	</div>
 </header>
