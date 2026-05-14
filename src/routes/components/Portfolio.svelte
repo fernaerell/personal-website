@@ -7,6 +7,7 @@
 	import Filter from './Filter.svelte';
 
 	import { type Portfolio, getTags } from '../lib/Portfolio';
+	import { resolve } from '$app/paths';
 
 	const TAG_GAME_MINECRAFT = 'Minecraft';
 	const TAG_GAME_GTA_V = 'GTA V';
@@ -185,7 +186,9 @@
 			<Search />
 		</div> -->
 		{#if portfolios.length > 0}
-			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
+			<div
+				class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+			>
 				{#each portfolios as portfolio, index (index)}
 					<a
 						href={portfolio.href}
@@ -215,6 +218,7 @@
 					</a>
 				{/each}
 			</div>
+			<a href={resolve('/portfolios')} class="rounded-2xl bg-[#1a1a1a] hover:cursor-pointer px-5 py-3.75 w-full sm:w-50 text-center">Show More</a>
 		{:else}
 			<p class="opacity-50">No portfolio yet.</p>
 		{/if}
