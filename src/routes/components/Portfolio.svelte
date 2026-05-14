@@ -180,10 +180,10 @@
 <div class="flex min-h-screen flex-col items-center gap-12.5 p-12.5">
 	<h1 id="portfolio" class="text-center text-3xl font-bold">Portfolio</h1>
 	<div class="flex h-full w-full flex-1 flex-col items-center gap-5">
-		<div class="flex w-full flex-row items-center gap-2.5">
+		<!-- <div class="flex w-full flex-row items-center gap-2.5">
 			<Filter />
 			<Search />
-		</div>
+		</div> -->
 		{#if portfolios.length > 0}
 			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
 				{#each portfolios as portfolio, index (index)}
