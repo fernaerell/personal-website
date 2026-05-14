@@ -3,6 +3,9 @@
 	import sawit_webp from '$lib/assets/images/sawit.webp';
 	import titans_webp from '$lib/assets/images/titans.webp';
 
+	import Search from './Search.svelte';
+	import Filter from './Filter.svelte';
+
 	import { type Portfolio, getTags } from '../lib/Portfolio';
 
 	const TAG_GAME_MINECRAFT = 'Minecraft';
@@ -177,14 +180,18 @@
 <div class="flex min-h-screen flex-col items-center gap-12.5 p-12.5">
 	<h1 id="portfolio" class="text-center text-3xl font-bold">Portfolio</h1>
 	<div class="flex h-full w-full flex-1 flex-col items-center gap-5">
+		<div class="flex w-full flex-row items-center gap-2.5">
+			<Filter />
+			<Search />
+		</div>
 		{#if portfolios.length > 0}
-			<div class="flex flex-row flex-wrap justify-center gap-5">
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
 				{#each portfolios as portfolio, index (index)}
 					<a
 						href={portfolio.href}
 						rel="external"
 						target="_blank"
-						class="group flex w-87.5 flex-col overflow-hidden rounded-2xl bg-[#1a1a1a] transition-transform duration-300 hover:border hover:border-white"
+						class="group flex flex-col overflow-hidden rounded-2xl bg-[#1a1a1a] transition-transform duration-300 hover:border hover:border-white"
 					>
 						<div class="aspect-video overflow-hidden">
 							<img
