@@ -218,7 +218,7 @@
 					</a>
 				{/each}
 			</div>
-			<a href={resolve('/portfolios')} class="rounded-2xl bg-[#1a1a1a] hover:cursor-pointer px-5 py-3.75 w-full sm:w-50 text-center">Show More</a>
+			<a href={resolve('/portfolio')} class="rounded-2xl bg-[#1a1a1a] hover:cursor-pointer px-5 py-3.75 w-full sm:w-50 text-center">Show More</a>
 		{:else}
 			<p class="opacity-50">No portfolio yet.</p>
 		{/if}
