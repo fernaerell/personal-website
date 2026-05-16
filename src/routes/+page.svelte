@@ -5,5 +5,5 @@
 </script>
 
 <Header />
-<Portfolio />
+<Portfolio show_more_button={true} max={5} />
 <Footer />

@@ -3,5 +3,5 @@
 	import Footer from '../components/Footer.svelte';
 </script>
 
-<Portfolio />
+<Portfolio show_more_button={false} prefix_title="Fern Aerell's" />
 <Footer />
