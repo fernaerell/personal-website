@@ -10,6 +10,7 @@
 	import instagramIconWebp from '$lib/assets/images/icons/social_media/instagram.webp';
 	import youtubeIconWebp from '$lib/assets/images/icons/social_media/youtube.webp';
 	import gmailIconWebp from '$lib/assets/images/icons/social_media/gmail.webp';
+	import discordIconWebp from '$lib/assets/images/icons/social_media/discord.webp';
 
 	import { onMount } from 'svelte';
 	import Typed, { type TypedOptions } from 'typed.js';
@@ -34,6 +35,14 @@
 				src: linkedinIconWebp,
 				alt: 'linkedin icon'
 			}
+		},
+		{
+			title: 'Discord',
+			href: 'https://discord.gg/pfWTVU3j5H',
+			img: {
+				src: discordIconWebp,
+				alt: 'discord icon'
+			},
 		},
 		{
 			title: 'X',
