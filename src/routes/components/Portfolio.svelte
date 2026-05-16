@@ -7,6 +7,15 @@
 	import Filter from './Filter.svelte';
 
 	import { type Portfolio, getTags } from '../lib/Portfolio';
+	import { resolve } from '$app/paths';
+
+	interface Props {
+		prefix_title?: string;
+		show_more_button: boolean;
+		max?: number;
+	}
+
+	const props: Props = $props();
 
 	const TAG_GAME_MINECRAFT = 'Minecraft';
 	const TAG_GAME_GTA_V = 'GTA V';
@@ -177,16 +186,20 @@
 	];
 </script>
 
-<div class="flex min-h-screen flex-col items-center gap-12.5 p-12.5">
-	<h1 id="portfolio" class="text-center text-3xl font-bold">Portfolio</h1>
+<div class="flex flex-col items-center gap-12.5 p-12.5">
+	<h1 id="portfolio" class="text-center text-3xl font-bold">
+		{props.prefix_title ?? ''} Portfolio
+	</h1>
 	<div class="flex h-full w-full flex-1 flex-col items-center gap-5">
 		<!-- <div class="flex w-full flex-row items-center gap-2.5">
 			<Filter />
 			<Search />
 		</div> -->
 		{#if portfolios.length > 0}
-			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
-				{#each portfolios as portfolio, index (index)}
+			<div
+				class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+			>
+				{#each (props.max ? portfolios.slice(0, props.max) : portfolios) as portfolio, index (index)}
 					<a
 						href={portfolio.href}
 						rel="external"
@@ -215,6 +228,13 @@
 					</a>
 				{/each}
 			</div>
+			{#if props.show_more_button}
+				<a
+					href={resolve('/portfolio')}
+					class="w-full rounded-2xl bg-[#1a1a1a] px-5 py-3.75 text-center hover:cursor-pointer sm:w-50"
+					>Show More</a
+				>
+			{/if}
 		{:else}
 			<p class="opacity-50">No portfolio yet.</p>
 		{/if}
