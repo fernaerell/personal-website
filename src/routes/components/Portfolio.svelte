@@ -44,7 +44,9 @@
 						</div>
 						<div class="flex flex-col gap-4 p-5">
 							<h3 class="truncate text-lg font-bold">{portfolio.title}</h3>
-							<p class="whitespace-pre-wrap opacity-95">No description.</p>
+							<p class="whitespace-pre-wrap opacity-95">
+								{portfolio.short_description ?? 'No description.'}
+							</p>
 							<div class="flex flex-row flex-wrap gap-1.5">
 								{#each getTags(portfolio) as tag, index (index)}
 									<span class="rounded-md border border-[#ffffff48] px-2.5 py-1 text-xs font-medium"

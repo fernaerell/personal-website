@@ -7,6 +7,7 @@ interface Portfolio {
 	title: string;
 	game?: string;
 	types?: string[];
+	short_description?: string;
 }
 
 export const getTags = (portfolio: Portfolio): string[] => {
@@ -34,7 +35,7 @@ export const portfolios: Portfolio[] = [
 		},
 		title: 'Aerell Fasting',
 		game: TAG_GAME_MINECRAFT,
-		types: [TAG_TYPE_ADDON]
+		types: [TAG_TYPE_ADDON],
 	},
 	{
 		href: 'https://youtu.be/2AGPcd45Lvc?si=SrpnhhBNA51jDM44',
