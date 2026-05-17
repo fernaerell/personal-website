@@ -47,7 +47,8 @@ export const portfolios: Portfolio[] = [
 		},
 		title: 'Aerell Time Text',
 		game: TAG_GAME_MINECRAFT,
-		types: [TAG_TYPE_ADDON]
+		types: [TAG_TYPE_ADDON],
+		short_description: 'Display a 24-hour digital clock right on your Minecraft screen.'
 	},
 	{
 		href: 'https://drive.google.com/file/d/18CKmCfYqSsNb1O6nhVrdLzEjsHUD66BS/view?usp=sharing',
