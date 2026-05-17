@@ -1,4 +1,5 @@
 interface Portfolio {
+	id?: string;
 	href: string;
 	img: {
 		src: string;
