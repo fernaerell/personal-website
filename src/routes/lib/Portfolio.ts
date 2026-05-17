@@ -37,6 +37,7 @@ export const portfolios: Portfolio[] = [
 		title: 'Aerell Fasting',
 		game: TAG_GAME_MINECRAFT,
 		types: [TAG_TYPE_ADDON],
+		short_description: 'An immersive 30-day fasting challenge for Minecraft.'
 	},
 	{
 		href: 'https://youtu.be/2AGPcd45Lvc?si=SrpnhhBNA51jDM44',
