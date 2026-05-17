@@ -29,7 +29,7 @@
 			>
 				{#each props.max ? portfolios.slice(0, props.max) : portfolios as portfolio, index (index)}
 					<a
-						href={portfolio.href}
+						href={portfolio.id ? `/portfolio/${portfolio.id}` : portfolio.href}
 						rel="external"
 						target="_blank"
 						class="group flex flex-col overflow-hidden rounded-2xl bg-[#1a1a1a] transition-transform duration-300 hover:border hover:border-white"
