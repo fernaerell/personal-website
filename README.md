@@ -15,7 +15,7 @@ To recreate this project with the same configuration:
 
 ```sh
 # recreate this project
-bun x sv@0.15.1 create --template minimal --types ts --add prettier tailwindcss="plugins:none" sveltekit-adapter="adapter:vercel" paraglide="languageTags:en, id+demo:no" eslint vitest="usages:unit,component" --install bun .
+bun x sv@0.17.1 create --template minimal --types ts --add prettier eslint vitest="usages:unit,component" tailwindcss="plugins:none" sveltekit-adapter="adapter:cloudflare+cfTarget:workers" paraglide="languageTags:id, en+demo:no" --install bun .
 ```
 
 ## Developing
