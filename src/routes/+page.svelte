@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Portrait from '$lib/components/Portrait.svelte';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 	import { SITE } from '$lib/data/site';
 </script>
 
@@ -9,4 +10,5 @@
 
 <section id="home" class="min-h-svh bg-[#08090b]">
 	<Portrait />
+	<SiteHeader />
 </section>
