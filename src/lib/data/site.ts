@@ -1,6 +1,7 @@
 export const SITE = {
     brand: "Personal Web",
-    name: 'Fern Aerell'
+    name: 'Fern Aerell',
+    location: 'Rahasia, Indonesia',
 } as const;
 
 export const NAV_LINKS = [
