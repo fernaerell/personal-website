@@ -13,9 +13,14 @@
 <style>
 	.portrait {
 		position: absolute;
+		inset: 0 auto 0 0;
 		width: 50%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
 		pointer-events: none;
 		transform: translateX(-10%);
+		filter: drop-shadow(0 34px 70px rgb(0 0 0 / 0.82)) drop-shadow(-22px -14px 60px rgb(150 182 235 / 0.09));
 		-webkit-mask-image: linear-gradient(
 			94deg,
 			#000 0%,

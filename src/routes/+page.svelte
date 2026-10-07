@@ -13,6 +13,29 @@
 	id="home"
 	class="relative isolate flex min-h-svh flex-col overflow-hidden bg-[#08090b] text-white"
 >
+	<!-- Cinematic studio lighting -->
+	<div class="pointer-events-none absolute inset-0 -z-20" aria-hidden="true">
+		<div
+			class="absolute inset-0 bg-[linear-gradient(168deg,#15171c_0%,#0b0c0f_42%,#08090b_72%,#050506_100%)]"
+		></div>
+		<div
+			class="absolute inset-0 bg-[radial-gradient(75%_60%_at_30%_26%,rgba(126,152,196,0.17)_0%,transparent_68%)]"
+		></div>
+		<div
+			class="absolute inset-0 bg-[radial-gradient(55%_50%_at_72%_82%,rgba(196,150,104,0.11)_0%,transparent_70%)]"
+		></div>
+		<div
+			class="absolute inset-x-0 bottom-0 h-[38%] bg-[radial-gradient(120%_100%_at_36%_120%,rgba(94,110,140,0.16)_0%,transparent_72%)]"
+		></div>
+	</div>
+
+	<!-- Grid hairlines -->
+	<div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.55]" aria-hidden="true">
+		<div
+			class="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.05)_0px,rgba(255,255,255,0.05)_1px,transparent_1px,transparent_8.3333%)]"
+		></div>
+	</div>
+
 	<Portrait />
 	<SiteHeader />
 
@@ -66,4 +89,19 @@
 			</p>
 		</footer>
 	</main>
+
+	<!-- Vignette + film grain -->
+	<div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+		<div
+			class="absolute inset-0 bg-[radial-gradient(115%_85%_at_42%_42%,transparent_38%,rgba(0,0,0,0.55)_78%,rgba(0,0,0,0.85)_100%)]"
+		></div>
+		<div class="grain absolute inset-0 opacity-[0.16] mix-blend-overlay"></div>
+	</div>
 </section>
+
+<style>
+	.grain {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+		background-repeat: repeat;
+	}
+</style>
