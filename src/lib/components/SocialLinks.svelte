@@ -19,7 +19,7 @@
 				></span>
 				<BrandIcon
 					brand={social.brand}
-					size={19}
+					size={social.brand != 'discord' ? 19 : 30}
 					class="relative transition-transform duration-300 group-hover:-translate-y-0.5"
 				/>
 			</a>

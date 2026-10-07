@@ -24,6 +24,7 @@ export const SOCIALS = [
 	{ name: 'Facebook', brand: 'facebook', href: 'https://web.facebook.com/fernaerelll' },
 	{ name: 'TikTok', brand: 'tiktok', href: 'https://www.tiktok.com/@fernaerell' },
 	{ name: 'X', brand: 'x', href: 'https://x.com/fernaerell' },
+	{ name: 'Discord', brand: 'discord', href: 'https://discord.gg/pfWTVU3j5H' },
 	{ name: 'LinkedIn', brand: 'linkedin', href: 'https://www.linkedin.com/in/fernaerell/' },
 	{ name: 'Github', brand: 'github', href: 'https://github.com/fernaerell' }
 ] as const satisfies readonly { name: string; brand: BrandName; href: string }[];
