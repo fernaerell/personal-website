@@ -48,5 +48,22 @@
 				</div>
 			</div>
 		</div>
+
+		<footer
+			class="relative z-10 flex items-end justify-between gap-6 border-t border-white/8 px-5 py-5 sm:px-8 lg:px-12"
+		>
+			<a
+				href="mailto:{SITE.email}"
+				class="font-sans text-[0.6875rem] tracking-[0.14em] text-white/40 uppercase transition-colors duration-300 hover:text-white sm:text-xs"
+			>
+				{SITE.email}
+			</a>
+			<p
+				class="hidden font-sans text-[0.6875rem] tracking-[0.14em] text-white/30 uppercase sm:block"
+			>
+				&copy; {new Date().getFullYear()}
+				{SITE.name}
+			</p>
+		</footer>
 	</main>
 </section>

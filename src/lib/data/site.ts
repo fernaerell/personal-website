@@ -5,6 +5,7 @@ export const SITE = {
     name: 'Fern Aerell',
     role: 'Digital Creator & Software Engineer',
     location: 'Rahasia, Indonesia',
+    email: 'fernaerell.business@gmail.com'
 } as const;
 
 export const NAV_LINKS = [
