@@ -25,5 +25,8 @@ vite.config.ts.timestamp-*
 src/lib/paraglide
 project.inlang/cache/
 
+# Bun
+bun.lock
+
 # Other
 temp
