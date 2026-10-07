@@ -7,6 +7,18 @@
 
 <svelte:head>
 	<title>{SITE.name} — {SITE.role}</title>
+	<meta
+		name="description"
+		content="{SITE.name} is a {SITE.role} based in {SITE.location}. Selected work, writing and contact."
+	/>
+	<meta name="theme-color" content="#08090b" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{SITE.name} — {SITE.role}" />
+	<meta
+		property="og:description"
+		content="{SITE.name} is a {SITE.role} based in {SITE.location}. Selected work, writing and contact."
+	/>
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <section
