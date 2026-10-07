@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Portrait from '$lib/components/Portrait.svelte';
 	import SiteHeader from '$lib/components/SiteHeader.svelte';
+	import SocialLinks from '$lib/components/SocialLinks.svelte';
 	import { SITE } from '$lib/data/site';
 </script>
 
 <svelte:head>
-	<title>{SITE.name}</title>
+	<title>{SITE.name} — {SITE.role}</title>
 </svelte:head>
 
 <section
@@ -38,6 +39,7 @@
 				<div
 					class="mt-7 flex flex-col gap-7 border-t border-white/10 pt-6 sm:mt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-10"
 				>
+					<SocialLinks />
 					<p
 						class="font-sans text-[0.6875rem] leading-relaxed tracking-[0.14em] text-white/35 uppercase"
 					>
