@@ -1,6 +1,7 @@
 export const SITE = {
     brand: "Personal Web",
     name: 'Fern Aerell',
+    role: 'Digital Creator & Software Engineer',
     location: 'Rahasia, Indonesia',
 } as const;
 
