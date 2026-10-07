@@ -15,6 +15,8 @@ export const NAV_LINKS = [
 	// { label: 'Contact', href: '/#contact' }
 ] as const;
 
+export type NavLink = (typeof NAV_LINKS)[number];
+
 export const SOCIALS = [
 	{ name: 'YouTube', brand: 'youtube', href: 'https://www.youtube.com/@fernaerell' },
 	{ name: 'Instagram', brand: 'instagram', href: 'https://www.instagram.com/fernaerell' },
@@ -25,3 +27,5 @@ export const SOCIALS = [
 	{ name: 'LinkedIn', brand: 'linkedin', href: 'https://www.linkedin.com/in/fernaerell/' },
 	{ name: 'Github', brand: 'github', href: 'https://github.com/fernaerell' }
 ] as const satisfies readonly { name: string; brand: BrandName; href: string }[];
+
+export type Social = (typeof SOCIALS)[number];
