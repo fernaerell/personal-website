@@ -1,13 +1,5 @@
-@import url('https://fonts.cdnfonts.com/css/poppins');
 @import 'tailwindcss';
 
-:root {
-    --deep-space: #0F0F0F;
-    --ghost-white: #F5F5F5;
-}
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--deep-space);
-    color: var(--ghost-white);
+    overflow-y: hidden;
 }
